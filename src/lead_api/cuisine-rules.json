@@ -1,0 +1,26 @@
+{
+  "primary": {
+    "Italian": ["italian_restaurant"],
+    "Japanese": ["japanese_restaurant"],
+    "Chinese": ["chinese_restaurant"],
+    "Indian": ["indian_restaurant"],
+    "Mexican": ["mexican_restaurant"],
+    "Thai": ["thai_restaurant"],
+    "French": ["french_restaurant"],
+    "Greek": ["greek_restaurant"],
+    "Turkish": ["turkish_restaurant"]
+  },
+  "secondary": {
+    "Pizza": ["pizza_restaurant"],
+    "Sushi": ["sushi_restaurant"],
+    "Ramen": ["ramen_restaurant"],
+    "Burgers": ["hamburger_restaurant"],
+    "Steak": ["steak_house"]
+  },
+  "umbrella": {
+    "Asian": {
+      "signals": ["asian_restaurant"],
+      "members": ["Chinese", "Indian", "Japanese", "Thai"]
+    }
+  }
+}

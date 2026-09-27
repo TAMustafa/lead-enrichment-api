@@ -1,0 +1,3 @@
+source,source_lead_id,business_name,address
+GRID,csv-simple-001,Example Restaurant,"10 Example Street, Amsterdam"
+SELF_SIGNUP,csv-simple-002,Example Market,"20 Example Street, Amsterdam"

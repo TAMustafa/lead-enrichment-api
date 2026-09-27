@@ -1,0 +1,252 @@
+{
+  "Lead": {
+    "Company": {
+      "source": "input.business_name",
+      "type": "string",
+      "required": true
+    },
+    "LastName": {
+      "constant": "Business inquiry",
+      "type": "string",
+      "required": true,
+      "max_length": 80
+    },
+    "Industry": {
+      "source": "enrichment.industry",
+      "type": "string",
+      "allowed_values": [
+        "Hospitality",
+        "Retail",
+        "Food & Beverage"
+      ]
+    },
+    "Street": {
+      "source": "address.street",
+      "type": "string",
+      "max_length": 255
+    },
+    "PostalCode": {
+      "source": "address.postal_code",
+      "type": "string",
+      "max_length": 20
+    },
+    "City": {
+      "source": "address.city",
+      "type": "string",
+      "max_length": 40
+    },
+    "Country": {
+      "source": "address.country",
+      "type": "string",
+      "max_length": 80
+    },
+    "Phone": {
+      "source": "enrichment.phone",
+      "type": "string",
+      "max_length": 40
+    },
+    "Google_Place_ID__c": {
+      "source": "place_id",
+      "type": "string"
+    },
+    "Internal_Lead_ID__c": {
+      "source": "lead_id",
+      "type": "string",
+      "max_length": 36
+    },
+    "Normalized_Business_Name__c": {
+      "source": "normalized_name",
+      "type": "string"
+    },
+    "Normalized_Address__c": {
+      "source": "normalized_address",
+      "type": "string",
+      "max_length": 255
+    },
+    "Normalized_Phone__c": {
+      "source": "normalized_phone",
+      "type": "string",
+      "max_length": 40
+    },
+    "Website": {
+      "source": "enrichment.website",
+      "type": "string",
+      "max_length": 255
+    },
+    "Google_Rating__c": {
+      "source": "enrichment.rating",
+      "type": "number"
+    },
+    "Google_Reviews__c": {
+      "source": "enrichment.review_count",
+      "type": "integer"
+    },
+    "Store_Type__c": {
+      "source": "enrichment.business_types",
+      "type": "string",
+      "max_length": 200,
+      "join_with": "; "
+    },
+    "Primary_Cuisine__c": {
+      "source": "enrichment.primary_cuisine",
+      "type": "string",
+      "max_length": 100
+    },
+    "Secondary_Cuisine__c": {
+      "source": "enrichment.secondary_cuisine",
+      "type": "string",
+      "max_length": 100
+    },
+    "Opening_Hours__c": {
+      "source": "enrichment.opening_hours",
+      "type": "string",
+      "max_length": 4000,
+      "join_with": "\n"
+    },
+    "Has_Delivery__c": {
+      "source": "enrichment.delivery",
+      "type": "boolean"
+    },
+    "Price_Range__c": {
+      "source": "enrichment.price_range",
+      "type": "string",
+      "max_length": 16
+    },
+    "Business_Status__c": {
+      "source": "enrichment.operational_status",
+      "type": "string",
+      "max_length": 24
+    },
+    "Date_Enriched_At__c": {
+      "source": "enrichment.enriched_at",
+      "type": "datetime"
+    },
+    "Last_Review_Date__c": {
+      "source": "enrichment.last_review_date",
+      "type": "date"
+    },
+    "Review_Date_Status__c": {
+      "source": "enrichment.last_review_date_status",
+      "type": "string",
+      "max_length": 40
+    },
+    "Lead_Enriched__c": {
+      "constant": true,
+      "type": "boolean"
+    },
+    "Service_Options__c": {
+      "source": "enrichment.service_options",
+      "type": "string",
+      "max_length": 200
+    },
+    "Payment_Options__c": {
+      "source": "enrichment.payment_options",
+      "type": "string",
+      "max_length": 200,
+      "join_with": "; "
+    },
+    "Description": {
+      "source": "enrichment.research_signals",
+      "type": "string",
+      "max_length": 32000,
+      "join_with": "\n"
+    },
+    "Latitude": {
+      "source": "enrichment.latitude",
+      "type": "number"
+    },
+    "Longitude": {
+      "source": "enrichment.longitude",
+      "type": "number"
+    },
+    "LeadSource": {
+      "source": "input.source",
+      "type": "string",
+      "max_length": 255,
+      "allowed_values": [
+        "GRID",
+        "Self Signup"
+      ],
+      "value_map": {
+        "GRID": "GRID",
+        "SELF_SIGNUP": "Self Signup"
+      }
+    },
+    "Lead_Source__c": {
+      "source": "input.source",
+      "type": "string",
+      "max_length": 255,
+      "allowed_values": [
+        "GRID",
+        "WEB",
+        "TPU"
+      ],
+      "value_map": {
+        "GRID": "GRID",
+        "SELF_SIGNUP": "WEB",
+        "WEB": "WEB",
+        "TPU": "TPU"
+      }
+    }
+  },
+  "Account": {
+    "Name": {
+      "source": "input.business_name",
+      "type": "string",
+      "required": true
+    },
+    "BillingStreet": {
+      "source": "address.street",
+      "type": "string",
+      "max_length": 255
+    },
+    "BillingPostalCode": {
+      "source": "address.postal_code",
+      "type": "string",
+      "max_length": 20
+    },
+    "BillingCity": {
+      "source": "address.city",
+      "type": "string",
+      "max_length": 40
+    },
+    "BillingCountry": {
+      "source": "address.country",
+      "type": "string",
+      "max_length": 80
+    },
+    "Phone": {
+      "source": "enrichment.phone",
+      "type": "string",
+      "max_length": 40
+    },
+    "Google_Place_ID__c": {
+      "source": "place_id",
+      "type": "string"
+    },
+    "Internal_Lead_ID__c": {
+      "source": "lead_id",
+      "type": "string",
+      "max_length": 36
+    },
+    "Normalized_Business_Name__c": {
+      "source": "normalized_name",
+      "type": "string"
+    },
+    "Normalized_Address__c": {
+      "source": "normalized_address",
+      "type": "string",
+      "max_length": 255
+    },
+    "Normalized_Phone__c": {
+      "source": "normalized_phone",
+      "type": "string",
+      "max_length": 40
+    },
+    "Website": {
+      "source": "enrichment.website",
+      "type": "string",
+      "max_length": 255
+    }
+  }
+}

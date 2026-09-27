@@ -1,0 +1,34 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_USER: lead
+      POSTGRES_PASSWORD: lead
+      POSTGRES_DB: leads
+    ports: ["127.0.0.1:5432:5432"]
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U lead -d leads"]
+      interval: 2s
+      timeout: 2s
+      retries: 20
+  migrate:
+    image: postgres:17-alpine
+    environment:
+      PGPASSWORD: lead
+    volumes:
+      - ./migrations:/migrations:ro
+    command: ["psql", "-h", "postgres", "-U", "lead", "-d", "leads", "-v", "ON_ERROR_STOP=1", "-f", "/migrations/001_initial.sql"]
+    depends_on:
+      postgres: {condition: service_healthy}
+  api:
+    build: .
+    env_file: .env
+    environment:
+      LQ_DATABASE_URL: postgresql://lead:lead@postgres:5432/leads
+    ports: ["127.0.0.1:8000:8000"]
+    depends_on:
+      migrate: {condition: service_completed_successfully}
+volumes:
+  pgdata:

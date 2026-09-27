@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="demo-token" content="__DEMO_CSRF_TOKEN__"><title>Lead Qualification · Test Console</title>
+<link rel="stylesheet" href="/demo/static/demo.css"></head>
+<body><header><div class="brand"><i>✓</i>Lead Qualification</div><div class="badge">Live Salesforce · development org</div></header>
+<main><h1>Check a business</h1><p class="intro">Enter a restaurant or grocery store. Eligible new businesses are saved to Salesforce.</p>
+<div class="notice">Salesforce development org · Live business data · Partner check uses test data.</div>
+<div class="layout"><section class="card">
+<form id="form"><div class="field"><label for="name">Business name</label><input id="name" name="business_name" placeholder="e.g. Bella Pizza" required maxlength="250" autocomplete="organization"></div><div class="field"><label for="address">Address</label><input id="address" name="address" placeholder="e.g. 10 Main Street, Amsterdam" required minlength="3" maxlength="255" autocomplete="street-address"></div><details><summary>Options</summary><div class="row"><div class="field"><label for="source">Lead source</label><select id="source"><option value="GRID">GRID</option><option value="SELF_SIGNUP">Self Signup</option></select></div><div class="field"><label for="target">Write to</label><select id="target"><option>Lead</option><option>Account</option></select></div></div></details><button id="submit" class="primary" type="submit">Check business</button><button id="retry" class="secondary" type="button" hidden>Retry safely</button></form>
+</section></div><section class="card result" id="result" hidden aria-live="polite"></section>
+<div class="activity" id="activity" role="status">Ready</div>
+<details class="card wide"><summary>Processing details</summary><div id="steps"></div></details>
+<details class="card wide"><summary>Import a CSV file</summary><h2>Import a CSV</h2><p class="sub">Validate every row before writing. Up to 100 leads per file. Stable source IDs make retries safe.</p><a href="/demo/static/example.csv" download>Download example CSV</a><input type="file" id="csv-file" accept=".csv,text/csv"><button type="button" class="secondary" id="csv-preview">Validate & preview</button> <button type="button" class="secondary" id="csv-run" disabled>Run validated rows in Salesforce</button> <button type="button" class="secondary" id="csv-stop" disabled>Stop after current row</button> <button type="button" class="secondary" id="csv-export" disabled>Download results JSON</button><p id="csv-message" aria-live="polite"></p><div style="overflow:auto"><table><thead><tr><th>Source ID</th><th>Business</th><th>Outcome</th></tr></thead><tbody id="csv-rows"></tbody></table></div></details>
+<footer>Development test · Only qualified, unique businesses are saved.</footer></main>
+<script src="/demo/static/demo.js" defer></script><script src="/demo/static/batch.js" defer></script></body></html>

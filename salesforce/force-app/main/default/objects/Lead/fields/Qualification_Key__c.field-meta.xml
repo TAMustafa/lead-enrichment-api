@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Qualification_Key__c</fullName>
+    <caseSensitive>true</caseSensitive>
+    <description>Lead Qualification API identity metadata. No Google enrichment content.</description>
+    <externalId>true</externalId>
+    <label>Qualification Key</label>
+    <length>64</length>
+    <required>false</required>
+    <type>Text</type>
+    <unique>true</unique>
+</CustomField>

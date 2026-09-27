@@ -1,0 +1,147 @@
+{
+  "Lead": {
+    "Company": {
+      "source": "input.business_name",
+      "type": "string",
+      "required": true
+    },
+    "LastName": {
+      "constant": "Business inquiry",
+      "type": "string",
+      "required": true,
+      "max_length": 80
+    },
+    "Street": {
+      "source": "address.street",
+      "type": "string",
+      "max_length": 255
+    },
+    "PostalCode": {
+      "source": "address.postal_code",
+      "type": "string",
+      "max_length": 20
+    },
+    "City": {
+      "source": "address.city",
+      "type": "string",
+      "max_length": 40
+    },
+    "Country": {
+      "source": "address.country",
+      "type": "string",
+      "max_length": 80
+    },
+    "Phone": {
+      "source": "input.phone",
+      "type": "string",
+      "max_length": 40
+    },
+    "Google_Place_ID__c": {
+      "source": "place_id",
+      "type": "string"
+    },
+    "Internal_Lead_ID__c": {
+      "source": "lead_id",
+      "type": "string",
+      "max_length": 36
+    },
+    "Normalized_Business_Name__c": {
+      "source": "normalized_name",
+      "type": "string"
+    },
+    "Normalized_Address__c": {
+      "source": "normalized_address",
+      "type": "string",
+      "max_length": 255
+    },
+    "Normalized_Phone__c": {
+      "source": "normalized_phone",
+      "type": "string",
+      "max_length": 40
+    },
+    "LeadSource": {
+      "source": "input.source",
+      "type": "string",
+      "max_length": 255,
+      "allowed_values": [
+        "GRID",
+        "Self Signup"
+      ],
+      "value_map": {
+        "GRID": "GRID",
+        "SELF_SIGNUP": "Self Signup"
+      }
+    },
+    "Lead_Source__c": {
+      "source": "input.source",
+      "type": "string",
+      "max_length": 255,
+      "allowed_values": [
+        "GRID",
+        "WEB",
+        "TPU"
+      ],
+      "value_map": {
+        "GRID": "GRID",
+        "SELF_SIGNUP": "WEB",
+        "WEB": "WEB",
+        "TPU": "TPU"
+      }
+    }
+  },
+  "Account": {
+    "Name": {
+      "source": "input.business_name",
+      "type": "string",
+      "required": true
+    },
+    "BillingStreet": {
+      "source": "address.street",
+      "type": "string",
+      "max_length": 255
+    },
+    "BillingPostalCode": {
+      "source": "address.postal_code",
+      "type": "string",
+      "max_length": 20
+    },
+    "BillingCity": {
+      "source": "address.city",
+      "type": "string",
+      "max_length": 40
+    },
+    "BillingCountry": {
+      "source": "address.country",
+      "type": "string",
+      "max_length": 80
+    },
+    "Phone": {
+      "source": "input.phone",
+      "type": "string",
+      "max_length": 40
+    },
+    "Google_Place_ID__c": {
+      "source": "place_id",
+      "type": "string"
+    },
+    "Internal_Lead_ID__c": {
+      "source": "lead_id",
+      "type": "string",
+      "max_length": 36
+    },
+    "Normalized_Business_Name__c": {
+      "source": "normalized_name",
+      "type": "string"
+    },
+    "Normalized_Address__c": {
+      "source": "normalized_address",
+      "type": "string",
+      "max_length": 255
+    },
+    "Normalized_Phone__c": {
+      "source": "normalized_phone",
+      "type": "string",
+      "max_length": 40
+    }
+  }
+}
